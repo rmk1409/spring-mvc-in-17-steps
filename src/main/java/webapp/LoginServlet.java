@@ -35,16 +35,9 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		String param = request.getParameter("name");
+		request.setAttribute("name", param);
 		request.getRequestDispatcher("/WEB-INF//views/login.jsp").forward(request, response);
-//		PrintWriter out = response.getWriter();
-//		out.println("<html>");
-//		out.println("<head>");
-//		out.println("<title>Yahoo!!!!!!!!</title>");
-//		out.println("</head>");
-//		out.println("<body>");
-//		out.println("My First Servlet");
-//		out.println("</body>");
-//		out.println("</html>");
 	}
 
 }
