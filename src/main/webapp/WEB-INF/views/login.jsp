@@ -11,6 +11,7 @@
     <title>Login</title>
 </head>
 <body>
+${badCreds}
 <form action="/login.do" method="post">
     Enter your name <input type="text" name="name"/>
     Enter your password <input type="password" name="password"/>
