@@ -1,5 +1,6 @@
-package com.veselov.alex.jee.controller;
+package com.veselov.alex.springmvc.controller;
 
+import com.veselov.alex.springmvc.service.UserValidationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
+    private UserValidationService service = new UserValidationService();
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         return "login";
@@ -16,8 +19,14 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String handlePost(@RequestParam String name, @RequestParam String password, ModelMap model) {
-        model.put("name", name);
-        return "welcome";
+        String view = "welcome";
+        if (service.isUserValid(name, password)) {
+            model.put("name", name);
+        } else {
+            model.put("badCreds", "Bad Creds. Try others.");
+            view = "login";
+        }
+        return view;
     }
 
     @RequestMapping("/hello")
