@@ -1,4 +1,6 @@
-package webapp;
+package com.veselov.alex.jee.servlet;
+
+import com.veselov.alex.jee.service.UserValidationService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

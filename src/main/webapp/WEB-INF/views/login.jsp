@@ -13,8 +13,8 @@
 <body>
 ${badCreds}
 <form action="/login.do" method="post">
-    Enter your name <input type="text" name="name"/>
-    Enter your password <input type="password" name="password"/>
+    Enter your name <input type="text" name="name"/><br/>
+    Enter your password <input type="password" name="password"/><br/>
     <input type="submit"/>
 </form>
 </body>

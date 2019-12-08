@@ -1,4 +1,4 @@
-package webapp;
+package com.veselov.alex.jee.service;
 
 public class UserValidationService {
     public boolean isUserValid(String user, String password) {
